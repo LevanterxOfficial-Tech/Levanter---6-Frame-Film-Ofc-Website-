@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LEVANTER-DOUBLE 79 GAME MART</title>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255, 0, 0, 0.15) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255, 0, 0, 0.15) 40px);
+      background-size: 40px 40px;
+      animation: moveGrid 10s linear infinite;
+      color: #ffffff;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    @keyframes moveGrid {
+      from { background-position: 0 0; }
+      to { background-position: 200px 0; }
+    }
+
+    /* Menu Icon */
+    .menu-icon {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 20px; /* smaller size */
+      color: rgb(21, 0, 255);
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-icon:hover {
+      transform: scale(1.2);
+      color: #1a2be2;
+    }
+
+    .logo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 3px solid rgb(5, 33, 112);
+      object-fit: cover;
+      box-shadow: 0 0 25px rgb(13, 0, 255);
+      margin: 20px auto;
+      display: block;
+      animation: glow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 20px rgb(13, 0, 255); transform: scale(1); }
+      to { box-shadow: 0 0 40px rgb(0, 42, 255); transform: scale(1.05); }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 20px 0 10px;
+      text-align: center;
+      animation: fadeDown 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 span { color: rgb(26, 43, 226); }
+
+    /* Social Icons */
+    .social-icons {
+      text-align: center; 
+      margin-top: 10px; 
+      gap: 15px; 
+      display: flex; 
+      justify-content: center;
+      animation: fadeDown 2s ease forwards;
+      opacity: 0;
+    }
+
+    .social-icons a {
+      font-size: 1.8rem;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .social-icons a.whatsapp { color: #25D366; }
+    .social-icons a.youtube { color: #FF0000; }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      animation: fadeUp 2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .buttons a {
+      padding: 12px 25px;
+      border-radius: 30px;
+      border: 2px solid rgb(40, 7, 255);
+      background: linear-gradient(to right, #000000, #040f74);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      animation: pulse 2.5s infinite;
+    }
+
+    .buttons a:hover {
+      background: #1400c7;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    .support-cards {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      align-items: center;
+      animation: fadeUp 2.5s ease forwards;
+      opacity: 0;
+    }
+
+    .card {
+      background: linear-gradient(to bottom right, #000000, #031a4b);
+      border: 2px solid rgb(0, 6, 91);
+      border-radius: 25px;
+      padding: 25px;
+      width: 95%;
+      max-width: 260px;
+      box-shadow: 0 0 30px rgba(15, 47, 192, 0.4);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: floatCard 4s ease-in-out infinite;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 35px rgba(0, 21, 255, 0.6);
+    }
+
+    @keyframes floatCard {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .card-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgb(0, 0, 0);
+      margin-bottom: 15px;
+    }
+
+    .card h3 { color: white; font-size: 1.5rem; margin-bottom: 5px; }
+    .card .role { color: #ccc; font-size: 1.1rem; margin-bottom: 15px; }
+
+    .contact-btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      animation: blink 1.5s infinite alternate;
+    }
+
+    @keyframes blink {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    .contact-btn:hover {
+      background: rgb(2, 0, 123);
+      color: rgb(0, 0, 0);
+    }
+
+    .rights {
+      margin-top: 20px;
+      color: rgb(23, 0, 230);
+      font-size: 0.9rem;
+      text-align: center;
+      animation: fadeIn 3s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu Icon -->
+  <a href="lock.html" class="menu-icon"><i class=""></i></a>
+
+  <div id="main-content">
+    <img src="https://github.com/LevanterxOfficial-Tech/DOUBLE79-GAME-MART/blob/main/Logo%201.jpg?raw=true" alt="Logo" class="logo" />
+    <h1>6 FRAME<span> FILM OFC</span></h1>
+
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <a href="https://wa.me/+94774541577" target="_blank" class="whatsapp"><i class="fa fa-whatsapp"></i></a>
+      <a href="https://youtube.com/@double79?si=sKOvwfYX0phenFwc" target="_blank" class="youtube"><i class="fa fa-youtube-play"></i></a>
+    </div>
+
+    <div class="buttons">
+      
+      <a href="pcgamestore.html">PROJEC</a> 
+      <a href="downloadinghelp.html">ONLINE BOOKING</a>
+    </div>
+
+    <div class="support-cards">
+      <div class="card">
+        <img src="https://github.com/LevanterxOfficial-Tech/DOUBLE79-GAME-MART/blob/main/Logo%203.jpg?raw=true" alt="" class="card-img">
+        <h3>LEVANTRE</h3>
+        <p class="role">sᴜᴘᴘᴏʀᴛᴀ</p>
+        <a href="https://wa.me/+94720522884" class="contact-btn">CONTACT US</a>
+      </div>
+    </div>
+
+    <p class="rights">ʟᴇᴠᴀɴᴛᴇʀ- sɪx ғʀᴀᴍᴇ ғɪʟᴍ ᴀʟʟ ʀɪɢʜᴛꜱ ʀᴇꜱᴇʀᴠᴇᴅ</p>
+  </div>
+
+</body>
+</html>
