@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEVANTER-6 FRAME FILM OFC</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: black;
+      flex-direction: column; /* text එක පහළ දැක්වෙන්න */
+    }
+
+    .dots-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      flex: 1; /* මැදට දාන්න */
+    }
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      margin: 0 8px;
+      border-radius: 50%;
+      background-color: #fff;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    .dot:nth-child(1) {
+      animation-delay: 0s;
+      background-color: #003cff;
+    }
+
+    .dot:nth-child(2) {
+      animation-delay: 0.2s;
+      background-color: #0004ff;
+    }
+
+    .dot:nth-child(3) {
+      animation-delay: 0.4s;
+      background-color: #1e00ff;
+    }
+
+    .dot:nth-child(4) {
+      animation-delay: 0.6s;
+      background-color: #0055ff;
+    }
+
+    .dot:nth-child(5) {
+      animation-delay: 0.8s;
+      background-color: #001aff;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+      }
+      50% {
+        transform: scale(1.4);
+        opacity: 1;
+      }
+    }
+
+    footer {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="dots-container">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <footer>
+     LEVANTRE TECHNOLOGY 
+  </footer>
+
+  <script>
+    // 10 minutes = 600000 milliseconds
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 5000);
+  </script>
+</body>
+</html>
 
